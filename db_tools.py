@@ -1,18 +1,14 @@
 import sqlite3
-import time
-
-
-name = 'test01.db'
 
 def create_database(name):
-    '''
+    """
     generates an empty sqlite3 database that stores words and their meaning
 
     :param name: name of the final file
     :type name: string
     :return: generates an empty in the folder
     :rtype: name.db
-    '''
+    """
     conn = sqlite3.connect(name)
     c = conn.cursor()
 
@@ -37,7 +33,7 @@ def create_database(name):
 
 def add_word(name,word,definition,example = ""):
     """
-    takes a database name and add a row to a database with word, definition and example
+    add a row to a database with word, definition and example
     :param name: name of the database
     :type name: string
     :param word:
@@ -64,10 +60,10 @@ def add_word(name,word,definition,example = ""):
 
 def add_words_manually(name):
     """
-
+    a small tool to manually input words in the database
     :param name: file name of the database
     :type name: string
-    :return:
+    :return: add words one by one
     :rtype:
     """
     print('Starting manual input, now you can input words in the database , input X to exit)')
@@ -93,6 +89,15 @@ def add_words_manually(name):
 
 
 def add_words_txt(name, filename):
+    """
+
+    :param name: name of the database file
+    :type name: string ending in .db
+    :param filename: txt file with a lsit of words and definition divided by a tab
+    :type filename:
+    :return: add the file to the database
+    :rtype: none
+    """
     text_file = open(filename, "r")
     for line in text_file.read().splitlines():
         elements = line.split('\t', maxsplit=1)
@@ -100,6 +105,7 @@ def add_words_txt(name, filename):
     text_file.close()
 
 
+name = 'test01.db'
 filename = "grelist.txt"
 
-add_words_txt(name, filename)
+# add_words_txt(name, filename)
