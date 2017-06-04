@@ -105,7 +105,7 @@ def add_words_txt(name, filename):
     text_file.close()
 
 
-name = 'test01.db'
+name = 'test02.db'
 filename = "grelist.txt"
 
-# add_words_txt(name, filename)
+add_words_txt(name, filename)
