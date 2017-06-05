@@ -38,6 +38,8 @@ class Word(object):
         :rtype:
         """
 
+        # TODO: polish the console gui by adding an introduction at the beginning
+        # TODO: polish the visualization of words, showing history  and last time seen.
 
         positive = ("yes", "y", "Y", "Yes", "YES", "1", " ")
         negative = ("no", "n", "N", "No", "NO", "0", "")

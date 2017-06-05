@@ -105,7 +105,35 @@ def add_words_txt(name, filename):
     text_file.close()
 
 
-name = 'test02.db'
-filename = "grelist.txt"
 
-add_words_txt(name, filename)
+while True:
+    print()
+    print(" input 1 if you want to generate a new database")
+    print(" input 2 if you want to add a word manually to a new file")
+    print(" input 3 if you want to import a text file to an existing database")
+    print(" input 4 if you want to create a new database and import a txt in it")
+    print(" input 9 to close")
+
+    decision = input("input a number: ")
+
+    if decision == "1":
+        name = input("decide a name for the database you want to create, do not ad .db: ") + ".db"
+        create_database(name)
+    elif decision == "2":
+        name = input("decide a name for the database you want to work on, do not ad .db: ") + ".db: "
+        add_words_manually(name)
+    elif decision == "3":
+        name = input("decide a name for the database you want to work on, do not ad .db: ") + ".db: "
+        filename = input("decide a name for the text file you want to import, do not ad .txt: ")+".txt"
+        add_words_txt(name, filename)
+    elif decision == "4":
+        name = input("decide a name for the database you want to work on, do not ad .db: ") + ".db"
+        filename = input("decide a name for the text file you want to import, do not ad .txt: ") + ".txt"
+        create_database(name)
+        add_words_txt(name, filename)
+    elif decision == "9":
+        break
+    else:
+        print("input not valid")
+    print()
+print("closing")
