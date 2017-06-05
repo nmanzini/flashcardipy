@@ -18,7 +18,7 @@ class App(tk.Frame):
         definition = test_word.definition
 
         self.word_lbl = tk.Label(text=word)
-        self.question = tk.Label(text="you know dis?")
+        self.question = tk.Label(text="do you remember this word?")
         self.yes_btn = tk.Button(text="yes", width=12)
         self.no_btn = tk.Button(text="no", width=12)
         self.definition_lbl = tk.Label(text=definition, wraplength=200)
