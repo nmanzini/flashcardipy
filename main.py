@@ -166,9 +166,9 @@ class Word(object):
 
 def chooser():
     case = random.random()
-    if case < 0.1:
+    if case < 0.70:
         c.execute('SELECT rowid FROM words WHERE reported = 0  ORDER BY RANDOM() LIMIT 1;')
-    elif case < 0.2:
+    elif case < 0.95:
         c.execute('SELECT rowid FROM words WHERE reported = 0 and streak < 0 ORDER BY RANDOM() LIMIT 1;')
     else:
         c.execute('SELECT rowid FROM words WHERE reported = 0 and streak > 0 ORDER BY RANDOM() LIMIT 1;')
